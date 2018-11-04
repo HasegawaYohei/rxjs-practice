@@ -1,0 +1,21 @@
+{
+  "name": "rxjs-practice",
+  "version": "1.0.0",
+  "description": "rxjs勉強会",
+  "main": "index.js",
+  "scripts": {
+    "ex": "echo \"<html lang='ja'><head><meta charset='utf-8'/><title>example $N</title><body><script src='dist/$N.min.js'></script></body>\" > example.html && webpack -w & webpack-dev-server",
+    "pr": "node-sass src/style.scss dist/style.min.css --output-style compressed -w && webpack -w & webpack-dev-server"
+  },
+  "author": "koyamaso",
+  "license": "MIT",
+  "devDependencies": {
+    "node-sass": "^4.10.0",
+    "webpack": "^4.23.1",
+    "webpack-cli": "^3.1.2",
+    "webpack-dev-server": "^3.1.10"
+  },
+  "dependencies": {
+    "rxjs": "^6.3.3"
+  }
+}
