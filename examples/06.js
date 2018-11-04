@@ -1,5 +1,5 @@
-import { interval, from } from 'rxjs';
-import { mergeMap, take, map, distinctUntilChanged } from 'rxjs/operators';
+import { from } from 'rxjs';
+import { mergeMap, map } from 'rxjs/operators';
 
 console.log('06.js - Promise');
 
