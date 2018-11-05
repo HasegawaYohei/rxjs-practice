@@ -11,7 +11,7 @@ of(1,3,5,7,9,11,13,15,17)
     tap( (n) => console.log('tap2: ',n)),
     take(2)
   )
-  .subscribe( (n) => console.log(n) )
+  .subscribe( (v) => console.log(v) );
 
 console.log('-------------------------');
 
@@ -31,7 +31,7 @@ from(people)
     scan( (acc, one) => acc + one, 0),// js の Array.reduce( ... )に似ているが途中経過の値も流される
     toArray()
   )
-  .subscribe( (v) => console.log(v))
+  .subscribe( (v) => console.log(v));
 
 console.log('--------------------------');
 
@@ -41,7 +41,7 @@ range(1,5)
     mergeMap( (n) => range(1,n).pipe(mapTo(n))), // mapTo(n) は map ( (x) => n) と同じ(xは任意)
     toArray()
   )
-  .subscribe( (v) => console.log(v))
+  .subscribe( (v) => console.log(v));
 
 /*
 

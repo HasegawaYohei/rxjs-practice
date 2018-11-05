@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "ex": "echo \"<html lang='ja'><head><meta charset='utf-8'/><title>example $N</title><body><script src='dist/$N.min.js'></script></body>\" > example.html && webpack -w & webpack-dev-server",
-    "pr": "node-sass src/style.scss dist/style.min.css --output-style compressed -w && webpack -w & webpack-dev-server"
+    "pr": "node-sass src/style.scss dist/style.min.css --output-style compressed -w & webpack -w & webpack-dev-server"
   },
   "author": "koyamaso",
   "license": "MIT",

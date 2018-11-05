@@ -2,7 +2,7 @@ import { Observable } from 'rxjs';
 
 console.log('01.js - Observable');
 
-const stream = Observable.create( (observer) => {
+const observable = Observable.create( (observer) => {
   console.log('start subscribing');
   observer.next(100);
   observer.next('どんな値(配列や関数などのオブジェクトやStringやNumberなどのプリミティブデータ型まで)でもいいです');
@@ -11,11 +11,13 @@ const stream = Observable.create( (observer) => {
   observer.next({hello: 'RxJS!!!'});
 })
 
-stream.subscribe({
+const observer = {
   next    : (value) => console.log('next:', value),
   error   : (err)   => console.error('error:',  err),
   complete: ()      => console.log('complited!')
-})
+}
+
+observable.subscribe(observer);
 
 /*
 N=01 npm run ex
@@ -28,11 +30,5 @@ localhost:8000/example.htmlを開く
 
 9-11行目の順番をかえたりなどしてログの変化を見て下さい
 complete,errorがObserverに送られるとsubscribeが終了します
-
-このプログラムでは
-
-Observable : streamに代入されているオブジェクト
-Observer   : { next: ... , error: ..., complete:....}
-
 
 */

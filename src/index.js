@@ -16,15 +16,3 @@ npm run pr
 localhost:8000/index.htmlを開く
 index.html index.js style.scssを編集してください(保存したら手動でブラウザをリロードしてください)
 */
-fromEvent(document,'keydown')
-  .pipe(
-    mergeMap( () => of(searchElement.value)),
-    startWith("何か入力して下さい"),
-    tap( (value) => console.log(value)),
-    map( (value) => `<li class="col-12"><a href="">${value}</a></li>`),
-  )
-  .subscribe( (txt) => {
-    console.log(txt);
-    outputElement.textContent = '';
-    outputElement.insertAdjacentHTML('beforeend',txt);
-  })
